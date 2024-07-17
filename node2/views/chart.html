@@ -1,8 +1,253 @@
+<style>
+  #container1 {
+    width: 100%;
+    height: 400px;
+  }
+
+  #container2 {
+    width: 100%;
+    height: 400px;
+  }
+
+  #container3 {
+    width: 100%;
+    height: 400px;
+  }
+
+  #container4 {
+    width: 100%;
+    height: 400px;
+  }
+</style>
+<script>
+  //1
+  function chart1() {
+    Highcharts.chart('container1', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Monthly Average'
+      },
+      subtitle: {
+        text: 'Source: ' +
+          '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+          'target="_blank">Wikipedia.com</a>'
+      },
+      xAxis: {
+        categories: [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+          'Oct', 'Nov', 'Dec'
+        ]
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{
+        name: 'Seoul',
+        data: [
+          5.0, 6.2, 10.1, 20.9, 25.2, 36.4, 39.8, 38.4, 35.5, 29.2,
+          22.0, 17.8
+        ]
+      }, {
+        name: 'Busan',
+        data: [
+          -2.9, -3.6, -0.6, 4.8, 10.2, 14.5, 17.6, 16.5, 12.0, 6.5,
+          2.0, -0.9
+        ]
+      }]
+    });
+
+  };
+
+  //2
+  function chart2() {
+    Highcharts.chart('container2', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Monthly Average'
+      },
+      subtitle: {
+        text: 'Source: ' +
+          '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+          'target="_blank">Wikipedia.com</a>'
+      },
+      xAxis: {
+        categories: [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+          'Oct', 'Nov', 'Dec'
+        ]
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{
+        name: 'Seoul',
+        data: [
+          5.0, 6.2, 10.1, 20.9, 25.2, 36.4, 39.8, 38.4, 35.5, 29.2,
+          22.0, 17.8
+        ]
+      }, {
+        name: 'Busan',
+        data: [
+          -2.9, -3.6, -0.6, 4.8, 10.2, 14.5, 17.6, 16.5, 12.0, 6.5,
+          2.0, -0.9
+        ]
+      }]
+    });
+
+  };
+  // 2번끝
+
+  //3
+  function chart3() {
+    Highcharts.chart('container3', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Monthly Average'
+      },
+      subtitle: {
+        text: 'Source: ' +
+          '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+          'target="_blank">Wikipedia.com</a>'
+      },
+      xAxis: {
+        categories: [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+          'Oct', 'Nov', 'Dec'
+        ]
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{
+        name: 'Seoul',
+        data: [
+          5.0, 6.2, 10.1, 20.9, 25.2, 36.4, 39.8, 38.4, 35.5, 29.2,
+          22.0, 17.8
+        ]
+      }, {
+        name: 'Busan',
+        data: [
+          -2.9, -3.6, -0.6, 4.8, 10.2, 14.5, 17.6, 16.5, 12.0, 6.5,
+          2.0, -0.9
+        ]
+      }]
+    });
+  };
+
+  //4
+  function chart4() {
+    Highcharts.chart('container4', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Monthly Average'
+      },
+      subtitle: {
+        text: 'Source: ' +
+          '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
+          'target="_blank">Wikipedia.com</a>'
+      },
+      xAxis: {
+        categories: [
+          'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+          'Oct', 'Nov', 'Dec'
+        ]
+      },
+      yAxis: {
+        title: {
+          text: 'Temperature (°C)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{
+        name: 'Seoul',
+        data: [
+          5.0, 6.2, 10.1, 20.9, 25.2, 36.4, 39.8, 38.4, 35.5, 29.2,
+          22.0, 17.8
+        ]
+      }, {
+        name: 'Busan',
+        data: [
+          -2.9, -3.6, -0.6, 4.8, 10.2, 14.5, 17.6, 16.5, 12.0, 6.5,
+          2.0, -0.9
+        ]
+      }]
+    });
+  };
+  //chart4end
+
+  $(document).ready(function () {
+    chart1();
+    chart2();
+    chart3();
+    chart4();
+  });
+</script>
+
 <div class="container" style="margin-top:30px">
+  <!-- 1 row -->
   <div class="row">
-    <div class="col-sm-12">
-      <h2>Chart Page</h2>
-     
+    <div class="col-sm-6">
+      <h2>Chart Page1</h2>
+      <div id="container1"></div> <!--차트가 뿌려지는 영역-->
+    </div>
+    <div class="col-sm-6">
+      <h2>Chart Page2</h2>
+      <div id="container2"></div>
     </div>
   </div>
-</div>
+  <!-- 2 row -->
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Chart Page3</h2>
+      <div id="container3"></div>
+    </div>
+    <div class="col-sm-6">
+      <h2>Chart Page4</h2>
+      <div id="container4"></div>
+    </div>
+  </div>

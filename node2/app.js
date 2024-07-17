@@ -48,6 +48,11 @@ app.get('/chart', (req,res)=>{
     res.render('index', {'center':'chart'});
 })
 
+//chart2
+app.get('/chart', (req,res)=>{
+    res.render('index', {'center':'chart2'});
+})
+
 //cust
 app.get('/cust', (req,res)=>{
     res.render('index', {'center':'cust'});
