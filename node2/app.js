@@ -49,7 +49,7 @@ app.get('/chart', (req,res)=>{
 })
 
 //chart2
-app.get('/chart', (req,res)=>{
+app.get('/chart2', (req,res)=>{
     res.render('index', {'center':'chart2'});
 })
 
