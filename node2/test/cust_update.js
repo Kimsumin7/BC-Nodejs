@@ -1,6 +1,6 @@
 
-var db_connect = require('./db/db_connect');
-var db_sql = require('./db/db_sql');
+var db_connect = require('../db/db_connect');
+var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
 
