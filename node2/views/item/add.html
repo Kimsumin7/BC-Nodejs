@@ -1,8 +1,23 @@
 <div class="container" style="margin-top:30px">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1>Item Add Page</h1>
-        
-      </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Item Add Page</h1>
+      <form action="/item/registerimpl" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" class="form-control" id="price" placeholder="Enter account" name="price">
+        </div>
+        <!-- 사진 넣기 -->
+        <div class="form-group">
+          <label for="img">Price:</label>
+          <input type="file" class="form-control" id="img" placeholder="Enter account" name="img"> <!--item.js에 연결-->
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
     </div>
+  </div>
 </div>

@@ -34,6 +34,16 @@
     <h1>My First Bootstrap 4 Page</h1>
   </div>
 
+  {% if loginid %}
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="#">{{loginid}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/logout">LogOut</a>
+    </li>
+  </ul>
+  {% else %}
   <ul class="nav justify-content-end">
     <li class="nav-item">
       <a class="nav-link" href="/login">Login</a>
@@ -42,6 +52,8 @@
       <a class="nav-link" href="/register">Register</a>
     </li>
   </ul>
+  {% endif %}
+  
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="/">Home</a>
@@ -62,12 +74,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/chart2">Chart2</a>
         </li>
+
+        {% if loginid %}
         <li class="nav-item">
           <a class="nav-link" href="/cust">Cust</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/cust/add">Cust_Add</a>
         </li>
+        {% endif %}
+
         <li class="nav-item">
           <a class="nav-link" href="/item">Item</a>
         </li>

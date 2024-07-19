@@ -1,0 +1,49 @@
+app.js에 다 넣으면 복잡
+따로 분류, 그걸 위한 router
+routes에 app.js 일부 코드 가져옴
+routes로 작업한거는 지금 cust, item이 있고 app.js에서 길어짐 방지를 위해
+저기에서 따로 작업을 많이 하는
+
+
+
+쿼리스트링, 라우팅
+
+============================
+- cust.js
+
+//get방식일땐 quary에서 가져옴
+//post방식일땐 body에서 가져옴
+
+res.redirect('/cust'); 
+//기존에 만들었던 페이지 호출
+res.redirect('/cust/detail?id=' + id); 
+//수정을 하고 디테일로 가는데 id를 가진 애들을 모아와라
+
+여기서 let id = req.query.id;라는 구문은 req.query.id의 값을 가져와 
+id라는 이름의 변수에 할당
+
+let values = [id, pwd, name, acc, id]; //db_sql순서 맞춰줘야함
+
+register를 운영하는 곳
+app.js
+회원가입은 router로 안 빼고 app.js에서 처리
+// Database 연동
+var db_connect = require('./db/db_connect');
+var db_sql = require('./db/db_sql');
+그래서 이거 추가
+
+데이터 추가면 ~impl이라고 변수명 붙여서 했는데
+html 같은 실질적인게 없고 선언된거에서 끝인가 
+아 저게 라우터 cust에서 선언되어 있는거야
+저기에서 .post에 registerimpl이라고 하고 let변수로 id, name 등을 가져옴
+
+get, post처럼 방식이 다를때는 이름 같아도 ㄱㅊ
+
+
+//전역으로 설정해둔
+app.use((req, res, next)=>{
+    res.locals.loginid = req.user ? req.user.id : null;
+    res.locals.loginname = req.user ? req.user.name : null;
+    next(); //이 함수를 호출해야 다음 작업
+});
+
