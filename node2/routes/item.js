@@ -41,6 +41,7 @@ router
                     console.log('Select Error');
                     throw e;
                 } else {
+                    console.log(result)
                     goto.go(req, res, { 'center': 'item/list', 'datas': result });
                 }
             } catch (e) {
@@ -51,9 +52,33 @@ router
         });
 
     })
+
     .get("/add", (req, res) => { //127.0.0.1/item 라고 호출했을 때 "/"가 호출됨
         res.render('index', { 'center': 'item/add' });
     })
+
+    // item detail
+    .get("/detail", (req, res) => {
+        const id = req.query.id;
+        conn = db_connect.getConnection();
+        conn.query(db_sql.item_select_one, [id], (err, result, fields) => {
+            try {
+                if (err) {
+                    console.log('Select Error');
+                    throw err;
+                } else {
+                    console.log(result);
+                    goto.go(req, res, { 'center': 'item/detail', 'iteminfo': result[0] })
+                }
+            } catch (err) {
+                console.log(err);
+            } finally {
+                db_connect.close(conn);
+            }
+        });
+
+    })
+
     .post("/registerimpl", upload.single('img'), (req, res) => {
         let name = req.body.name;
         let price = req.body.price;
@@ -69,6 +94,43 @@ router
                 } else {
                     console.log('Insert Ok!')
                     res.redirect('/item');
+                }
+            } catch (e) {
+                console.log(e);
+            } finally {
+                db_connect.close(conn);
+            }
+        });
+    })
+
+    .post("/updateimpl", upload.single('img'), (req, res) => {
+        let id = req.body.id;
+        let name = req.body.name;
+        let price = req.body.price;
+        let oldname = req.body.oldname;
+        //const { originalname } = req.file
+        let originalname;
+        if (req.file) {
+            originalname = req.file.originalname;
+        } else {
+            originalname = null;
+        }
+        console.log(`input data ${name}, ${price}, ${oldname}, ${originalname}`);
+        let values;
+        if (originalname) {
+            values = [name, price, originalname, id];
+        } else {
+            values = [name, price, oldname, id];
+        }
+        conn = db_connect.getConnection();
+        conn.query(db_sql.item_update, values, (e, result, fields) => {
+            try {
+                if (e) {
+                    console.log('Insert Error');
+
+                } else {
+                    console.log('Insert Ok!')
+                    res.redirect('/item?id=' + id);
                 }
             } catch (e) {
                 console.log(e);

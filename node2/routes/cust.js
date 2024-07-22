@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 // Database 연동
 var db_connect = require('../db/db_connect');
 var db_sql = require('../db/db_sql'); 
-// /cust
+// cust
 router
     .get("/", (req, res) => { //127.0.0.1/cust 라고 호출했을 때 "/"가 호출됨
         conn = db_connect.getConnection();
@@ -40,7 +40,7 @@ router
         });
     })
     .get("/detail", (req, res) => {   // 127.0.0.1/cust/detail
-        let id = req.query.id;
+        const id = req.query.id; //const:id수정 못하게
         conn = db_connect.getConnection();
         conn.query(db_sql.cust_select_one, id, (err, result, fields) => {
             try {

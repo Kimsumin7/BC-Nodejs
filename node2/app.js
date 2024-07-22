@@ -229,7 +229,7 @@ app.post("/updateimpl", (req, res) => {
     conn.query(db_sql.cust_update, values, (e, result, fields) => {
         try {
             if (e) {
-                console.log('Update Error');
+                console.log('Update Error'); 
                 console.log(e);
                 throw e;
             } else {
@@ -252,8 +252,10 @@ app.get('/detail', (req, res) => {
 // Router 
 const cust = require('./routes/cust');
 const item = require('./routes/item');
+const block = require('./routes/block');
 app.use('/cust', cust);
 app.use('/item', item);
+app.use('/block', block);
 
 app.listen(port, () => {
     console.log(`server start port:${port}`)

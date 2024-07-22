@@ -1,0 +1,50 @@
+<script>
+
+  function connect() {
+    // web3가 잘 연동됐는지 확인하는 if문
+    web3 = new Web3(
+      new Web3.providers.HttpProvider("http://yeonkyun.kro.kr:7545")
+    );
+
+    if (web3.isConnected()) {
+      console.log("connected");
+    } else {
+      console.log("not connected");
+    }
+
+  }
+
+  $(document).ready(function () {
+    $('#connect_btn').click(function () {
+      //  alert('connect_btn');
+      connect();
+    });
+    $('#get_btn').click(function () {
+      alert('get_btn');
+    });
+  });
+</script>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Block1 Page</h2>
+      <a href="#" id="connect_btn" class="btn btn-info" role="button">Connect</a>
+      <a href="#" id="get_btn" class="btn btn-info" role="button">Get</a>
+      <table class="table">
+        <thead class="thead-dark text-center" >
+          <tr>
+            <th>Account</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <td>12121212</td>
+            <td>100 ETH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
