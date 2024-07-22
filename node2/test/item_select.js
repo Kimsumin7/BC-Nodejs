@@ -11,5 +11,5 @@ conn.query(db_sql.item_select, function (err, result, fields) {
         console.log(result);
         console.log(JSON.stringify(result));
     }
-    db_connect.close(conn);
+    db_connect.close(conn); 
 });
