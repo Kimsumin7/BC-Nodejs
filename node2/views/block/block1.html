@@ -1,4 +1,5 @@
 <script>
+  let web3;
 
   function connect() {
     // web3가 잘 연동됐는지 확인하는 if문
@@ -14,14 +15,26 @@
 
   }
 
+  function get() {
+    let accounts = web3.eth.accounts;
+    console.log(accounts);
+    let result = '';
+    for (var i in accounts) {
+      let balance =
+        web3
+          .fromWei(web3.eth.getBalance(accounts[i]))
+          .toNumber() + "ETH";
+      result += '<tr>';
+      result += '<td>' + accounts[i] + '</td>';
+      result += '<td>' + balance + '</td>';
+      result += '<tr>';
+    }
+    $('#acc_info').html(result);
+  };
+
   $(document).ready(function () {
-    $('#connect_btn').click(function () {
-      //  alert('connect_btn');
-      connect();
-    });
-    $('#get_btn').click(function () {
-      alert('get_btn');
-    });
+    connect();
+    get();
   });
 </script>
 
@@ -29,20 +42,20 @@
   <div class="row">
     <div class="col-sm-12">
       <h2>Block1 Page</h2>
-      <a href="#" id="connect_btn" class="btn btn-info" role="button">Connect</a>
+      <!-- <a href="#" id="connect_btn" class="btn btn-info" role="button">Connect</a> -->
       <a href="#" id="get_btn" class="btn btn-info" role="button">Get</a>
       <table class="table">
-        <thead class="thead-dark text-center" >
+        <thead class="thead-dark text-center">
           <tr>
             <th>Account</th>
             <th>Balance</th>
           </tr>
         </thead>
-        <tbody class="text-center">
-          <tr>
+        <tbody id="acc_info" class="text-center">
+          <!-- <tr>
             <td>12121212</td>
             <td>100 ETH</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>

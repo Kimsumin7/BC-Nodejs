@@ -41,7 +41,7 @@
   {% if loginid %}
   <ul class="nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link" href="#">{{loginid}}</a>
+      <a class="nav-link" href="/myinfo?id={{userid}}">{{loginid}}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/logout">LogOut</a>
@@ -98,9 +98,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/block/block1">Block1</a>
         </li>
+        {% if loginid %}
         <li class="nav-item">
-          <a class="nav-link" href="/block/block2">Block2</a>
+          <a class="nav-link" href="/block/block2?id={{loginid}}">Block2</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </nav>

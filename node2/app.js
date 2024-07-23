@@ -229,7 +229,7 @@ app.post("/updateimpl", (req, res) => {
     conn.query(db_sql.cust_update, values, (e, result, fields) => {
         try {
             if (e) {
-                console.log('Update Error'); 
+                console.log('Update Error');
                 console.log(e);
                 throw e;
             } else {
