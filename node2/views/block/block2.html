@@ -40,7 +40,7 @@
     let balance = web3
       .fromWei(web3.eth.getBalance(`{{custinfo.acc}}`))
       .toNumber() + "ETH";
-    $('#myamount').text(balance);
+    $('#myamount').text(balance + 'ETH'); 
   };
   $(document).ready(function () {
     connect();
